@@ -13,7 +13,7 @@ public class GameRepository implements IGameRepository{
 
 	public GameRepository() {
 		try {
-			QuakeParse parse = new QuakeParse("C:\\Users\\Matheus\\Documents\\PropositoDigital\\games.log");
+			QuakeParse parse = new QuakeParse("C:\\Users\\Matheus\\Documents\\PropositoDigital\\QuakeProject\\games.log");
 			for(Game game : parse.getGames()) {
 				games.put(game.getId(), game);
 			}
