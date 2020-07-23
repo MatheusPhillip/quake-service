@@ -1,5 +1,8 @@
 package model;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 public class Player {
 	
 	private String nickName;
@@ -35,7 +38,8 @@ public class Player {
 	
 	@Override
 	public String toString() {
-		return "Player [nickName=" + nickName + ", score=" + score + "]";
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(this);
 	}
 	
 	
