@@ -2,6 +2,9 @@ package model;
 
 import java.util.ArrayList;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 public class Game {
 	private int total_kills;
 	private int worldScore;
@@ -133,11 +136,14 @@ public class Game {
 		}
 		System.out.println("O player \"" + playerNickName + "\" matou o player \"" + playerKilledNickName + "\" usando a arma " + typeOfGun + ".");
 	}
-
+	
+	
 
 	@Override
 	public String toString() {
-		return "Game [id=" + id + ", players=" + players.toString() + "total_kills=" + total_kills + ", worldScore=" + worldScore +"]";
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return getId() + ": " + gson.toJson(this);
+		//return "Game [id=" + id + ", players=" + players.toString() + "total_kills=" + total_kills + ", worldScore=" + worldScore +"]";
 	}
 	
 	

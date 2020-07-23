@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		GameController gameController = new GameController();
-		gameController.getGameById("game_1");
+		gameController.getGameById("game_2");
 	}
 
 }
