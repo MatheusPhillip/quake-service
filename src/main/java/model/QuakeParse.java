@@ -136,6 +136,13 @@ public class QuakeParse {
 		game.MeanOfDeath(line, playerName, playerKilledName);					// INFORMA O MOTIVO DA MORTE DO JOGADOR
 	}
 	
+	/*
+	 *  O OBJETIVO DESTE MÉTODO É RETORNAR A LISTA DE JOGOS OCORRIDOS
+	 */
+	public ArrayList<Game> getGames() {
+		return games;
+	}
+	
 	public void showGames() {
 		for(int i = 0; i < games.size(); i++) {
 			System.out.println(games.get(i).toString());
