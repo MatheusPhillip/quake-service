@@ -9,10 +9,10 @@ public class Game {
 	private ArrayList<Player> players = new ArrayList<Player>();
 	
 	
-	public Game(String id) {
+	public Game(int id) {
 		this.total_kills = 0; // INICIALIZA A QUANTIDADE TOTAL DE MORTES NO JOGO COM 0
 		this.worldScore = 0;  // INICIALIZA A PONTUAÇÃO DE MORTES PELO CENÁRIO COM 0
-		this.id = id;
+		this.id = "game_"+ id;
 	}
 
 
@@ -99,7 +99,7 @@ public class Game {
 	 * O PARÂMETRO PLAYERNICKNAME REPRESENTA O NOME DO JOGADOR QUE MATOU
 	 * O PARÂMETRO PLAYERKILLEDNICKNAME REPRESENTA O NOME DO JOGADOR QUE MORREU
 	 */
-	public void causaDaMorte(String line, String playerNickName, String playerKilledNickName) {
+	public void MeanOfDeath(String line, String playerNickName, String playerKilledNickName) {
 		String meanOfDeath = line.substring(line.lastIndexOf("by") + 3, line.length()); // PEGA O ELEMENTO MOD NO FINAL DA LINHA
 		String typeOfGun; // REPRESENTA O NOME DE ARMA UTILIZADA 
 		switch(TypesOfDeath.valueOf(meanOfDeath)) {
