@@ -55,7 +55,8 @@ public class QuakeParse {
 			System.out.println("game_" + this.gameCounter + " encerrado. dentro do pega errado");
 			this.games.add(game);						// ADICIONA O ÚLTIMO JOGO NA LISTA DE JOGOS
 			this.gameCounter++;							// INCREMENTA O CONTADOR DE JOGOS
-			game = new Game(this.gameCounter);		// INSTANCIA UM NOVO JOGO
+			printGame();                                // EXIBE AS INFORMAÇÕES DO JOGO ENCERRADO
+			game = new Game(this.gameCounter);			// INSTANCIA UM NOVO JOGO
 			System.out.println("game_" + this.gameCounter + " iniciado.");
 			this.gameInProgress = true;
 		}
@@ -88,6 +89,7 @@ public class QuakeParse {
 		System.out.println("game_" + this.gameCounter + " encerrado.");
 		this.games.add(game);							// ADICIONA O JOGO NA LISTA DE JOGOS
 		this.gameInProgress = false;					// ATRIBUE FALSO A JOGO EM ANDAMENTO
+		printGame();                                	// EXIBE AS INFORMAÇÕES DO JOGO ENCERRADO
 	}
 	
 	/*
@@ -141,6 +143,13 @@ public class QuakeParse {
 	 */
 	public ArrayList<Game> getGames() {
 		return games;
+	}
+	
+	/*
+	 *  ESTE MÉTODO TEM POR OBJETIVO, APÓS UM GAME SER ENCERRADO, MOSTRAR O RESULTADO DESTE ÚLTIMO GAME
+	 */
+	private void printGame() {
+		System.out.println(game.toString());
 	}
 	
 	public void showGames() {
