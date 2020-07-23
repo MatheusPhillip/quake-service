@@ -8,6 +8,7 @@ public class Main {
 		
 		GameController gameController = new GameController();
 		gameController.getGameById("game_2");
+		gameController.showAllGamesScore();
 	}
 
 }

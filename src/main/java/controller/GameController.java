@@ -11,4 +11,7 @@ private IGameRepository game = new GameRepository();
 		System.out.println(game.getGameById(id));
 	}
 	
+	public void showAllGamesScore() {
+		game.showAllGamesScore();
+	}
 }

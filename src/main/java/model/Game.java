@@ -137,8 +137,11 @@ public class Game {
 		System.out.println("O player \"" + playerNickName + "\" matou o player \"" + playerKilledNickName + "\" usando a arma " + typeOfGun + ".");
 	}
 	
-	
-	
+	public void showAllPlayersScore() {
+		for(int i = 0; i < players.size(); i++) {
+			System.out.println(players.get(i).getNickName() + ":" + players.get(i).getScore());
+		}
+	}
 	
 
 	@Override

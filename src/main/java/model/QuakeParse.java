@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
 public class QuakeParse {
 	private int gameCounter = 0;
 	private Boolean gameInProgress = false;
@@ -152,10 +153,5 @@ public class QuakeParse {
 		System.out.println(game.toString());
 	}
 	
-	public void showGames() {
-		for(int i = 0; i < games.size(); i++) {
-			System.out.println(games.get(i).toString());
-		}
-	}
 	
 }

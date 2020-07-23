@@ -30,6 +30,10 @@ public class Player {
 		this.score += 1;
 	}
 	
+	public void setScore(int score) {
+		this.score = score;
+	}
+	
 	// CASO O JOGADOR MORRA POR AÇÃO DO CENÁRIO
 	// SUBTRAI 1 DA PONTUAÇÃO ATUAL DO JOGADOR
 	public void addDeathByWorld() {
