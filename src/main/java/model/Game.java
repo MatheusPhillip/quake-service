@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class Game {
+public class Game{
 	private int total_kills;
 	private int worldScore;
 	private String id;
@@ -177,5 +177,6 @@ public class Game {
 		score += "\t" + "}";
 		return score;
 	}
+
 	
 }

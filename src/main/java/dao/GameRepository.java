@@ -3,7 +3,11 @@ package dao;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 import interfaces.IGameRepository;
 import model.Game;
@@ -12,14 +16,17 @@ import model.QuakeParse;
 
 public class GameRepository implements IGameRepository{
 	
-	private Map<String, Game> games = new HashMap<>();
+	private ArrayList<Game> games = new ArrayList<Game>();
 
 	public GameRepository() {
 		try {
 			QuakeParse parse = new QuakeParse("C:\\Users\\Matheus\\Documents\\PropositoDigital\\QuakeProject\\games.log");
 			for(Game game : parse.getGames()) {
-				games.put(game.getId(), game);
+				//games.put(game.getId(), game);
+				games.add(game);
+				bubbleSortPlayersScore(game.getPlayers());
 			}
+			//sortGamesById();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -27,18 +34,29 @@ public class GameRepository implements IGameRepository{
 
 	@Override
 	public Game getGameById(String id) {
-		return games.get(id);
-	}
+		for (Game game : games) {
+			if(game.getId().equals(id)) {
+				return game;
+			}
+		}          
+		return null;
+    }
 
 	@Override
 	public void showAllGamesScore() {
+		
+		for (Game game : games) {
+			System.out.println("Resultado do " + game.getId() + ":");
+			//game.showAllPlayersScore();
+			System.out.println(game.toString());
+		}
+		/*
 		for(Map.Entry<String, Game> game: games.entrySet()) {
 			bubbleSortPlayersScore(game.getValue().getPlayers());
 			System.out.println("Resultado do " + game.getValue().getId() + ":");
 			//game.showAllPlayersScore();
 			System.out.println(game.getValue().toString());
 		}
-		/*
 		for(Game game : games.values()) {
 			bubbleSortPlayersScore(game.getPlayers());
 			System.out.println("Resultado do " + game.getId() + ":");
@@ -67,7 +85,6 @@ public class GameRepository implements IGameRepository{
 	    } while (change);
 	}
 
-	
 	
 	
 
