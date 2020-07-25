@@ -34,10 +34,10 @@ public class GameFile {
         }
     }
     
-    public void gravaObjeto(Game game){
+    public void saveGame(Game game){
         try{
             if(output != null){
-                output.writeObject(game);               
+                output.writeObject(game.toString());               
                 output.flush();
                 System.out.println("Game gravado com sucesso. ");
             }
