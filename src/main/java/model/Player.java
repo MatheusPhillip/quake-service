@@ -39,11 +39,15 @@ public class Player {
 	public void addDeathByWorld() {
 		this.score -= 1;
 	}
-	
+
 	@Override
 	public String toString() {
-		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        return gson.toJson(this);
+		return "\"" + nickName + "\"";
+	}
+	
+	public String toStringPlayerScore() {
+		return "Kills: {\n" 
+				+ toString() + ": " + getScore();
 	}
 	
 	

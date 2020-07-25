@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import interfaces.IGameRepository;
 import model.Game;
 import model.Player;
 import model.QuakeParse;
@@ -31,12 +32,20 @@ public class GameRepository implements IGameRepository{
 
 	@Override
 	public void showAllGamesScore() {
+		for(Map.Entry<String, Game> game: games.entrySet()) {
+			bubbleSortPlayersScore(game.getValue().getPlayers());
+			System.out.println("Resultado do " + game.getValue().getId() + ":");
+			//game.showAllPlayersScore();
+			System.out.println(game.getValue().toString());
+		}
+		/*
 		for(Game game : games.values()) {
 			bubbleSortPlayersScore(game.getPlayers());
 			System.out.println("Resultado do " + game.getId() + ":");
 			//game.showAllPlayersScore();
 			System.out.println(game.toString());
 		}
+		*/
 		
 	}
 	

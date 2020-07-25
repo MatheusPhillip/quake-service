@@ -143,7 +143,7 @@ public class Game {
 		}
 	}
 	
-
+	
 	@Override
 	public String toString() {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -151,7 +151,21 @@ public class Game {
 		//return "Game [id=" + id + ", players=" + players.toString() + "total_kills=" + total_kills + ", worldScore=" + worldScore +"]";
 	}
 	
+	/*
+	@Override
+	public String toString() {
+		return id + ": {\n" 
+				  + "total_kills: " + total_kills + ";\n" 
+				  + toStringPlayers() +"\n"
+				  + 
+	}
 	
+	private String toStringPlayers() {
+		return "Players: " + "[" +  players.toString() + "]";
+	}
 	
-	
+	private String toStringPlayersScore() {
+			
+	}
+	*/
 }
