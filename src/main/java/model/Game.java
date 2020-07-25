@@ -143,29 +143,39 @@ public class Game {
 		}
 	}
 	
-	
+	/*
 	@Override
 	public String toString() {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return getId() + ": " + gson.toJson(this);
 		//return "Game [id=" + id + ", players=" + players.toString() + "total_kills=" + total_kills + ", worldScore=" + worldScore +"]";
 	}
+	*/
 	
-	/*
 	@Override
 	public String toString() {
 		return id + ": {\n" 
-				  + "total_kills: " + total_kills + ";\n" 
-				  + toStringPlayers() +"\n"
-				  + 
+				  + "\t" + "total_kills: " + total_kills + ";\n" 
+				  + "\t" + toStringPlayers() +"\n"
+				  + "\t" + toStringPlayersScore();
 	}
 	
 	private String toStringPlayers() {
-		return "Players: " + "[" +  players.toString() + "]";
+		return "players: " + players.toString();
 	}
 	
 	private String toStringPlayersScore() {
-			
+		String score = "kills: {\n";
+		for(int i = 0; i < players.size(); i++) {
+			score += "\t\t";
+			score += players.get(i).toStringPlayerScore();
+			if(i < players.size() - 1) {
+				score += ",";
+			}
+			score += "\n";
+		}
+		score += "\t" + "}";
+		return score;
 	}
-	*/
+	
 }

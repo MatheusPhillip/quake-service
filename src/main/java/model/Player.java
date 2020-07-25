@@ -46,8 +46,7 @@ public class Player {
 	}
 	
 	public String toStringPlayerScore() {
-		return "Kills: {\n" 
-				+ toString() + ": " + getScore();
+		return toString() + ": " + getScore();
 	}
 	
 	
