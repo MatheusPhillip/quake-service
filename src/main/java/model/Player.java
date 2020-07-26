@@ -1,8 +1,5 @@
 package model;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 public class Player {
 	
 	private String nickName;
@@ -25,7 +22,9 @@ public class Player {
 		return score;
 	}
 	
-	// ADICIONA MAIS 1 NA PONTUAÇÃO ATUAL DO JOGADOR
+	/*
+	 * ADICIONA MAIS 1 NA PONTUAÇÃO ATUAL DO JOGADOR
+	 */
 	public void addScore() {
 		this.score += 1;
 	}
@@ -34,8 +33,10 @@ public class Player {
 		this.score = score;
 	}
 	
-	// CASO O JOGADOR MORRA POR AÇÃO DO CENÁRIO
-	// SUBTRAI 1 DA PONTUAÇÃO ATUAL DO JOGADOR
+	/*
+	 * CASO O JOGADOR MORRA POR AÇÃO DO CENÁRIO
+	 * SUBTRAI 1 DA PONTUAÇÃO ATUAL DO JOGADOR
+	 */
 	public void addDeathByWorld() {
 		this.score -= 1;
 	}
@@ -45,9 +46,10 @@ public class Player {
 		return "\"" + nickName + "\"";
 	}
 	
+	/*
+	 *  IMPRIME A PONTUAÇÃO DO JOGADOR
+	 */
 	public String toStringPlayerScore() {
 		return toString() + ": " + getScore();
 	}
-	
-	
 }
