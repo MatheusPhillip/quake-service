@@ -14,6 +14,15 @@ game_1: {
   }
 ```
 ---
+## Solução Proposta
+> Para este projeto eu fiz com que o parse fosse instanciado dentro da classe GameRepository, pois ele serve ao jogo,
+> logo, o GameRepository utiliza do parse para identificar e salvar os jogos.
+> Tentei não ir além do pedido, por isso não fiz nada extravagante. Tirando a parte de salvar em arquivo, pois, primeiramente,
+> achei que era para ser feito, e como não atrapalha no projeto eu optei por não remover.
+> Tive dificuldades na questão de organização, mas percebo que não faz sentido a clase Player possuir "score" como atributo, já
+> que um player, necessariamente, não possue tal característica, mas como Player faz referência a um player de um determinado game, 
+> e não no game em si (Quake 3 Arena, neste caso), optei por fazer desta forma.
+---
 ## Instalação
 ## Clone
 - Clone este repositório em sua máquina local usando o link: `https://github.com/MatheusPhillip/quake-service.git` 
@@ -34,3 +43,4 @@ __Passo 1__ <br />
 Abra a classe `Main.java` localizada na pasta: `\QuakeProject\src\main\java\main` <br />
 Na linha __16__ o método `gameController.showAllGamesScore()` será responsável por mostrar a lista de jogos <br />
 Caso não queira ver essa lista, simplesmente comente a linha `//` <br />
+
