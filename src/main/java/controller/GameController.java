@@ -9,7 +9,12 @@ public class GameController {
 	
 	
 	public void getGameById(String id) {
-		System.out.println(game.getGameById(id));
+		if(game.getGameById(id) != null) {
+			System.out.println(game.getGameById(id));
+		}
+		else {
+			System.out.println("Não foi encontrado um game com ID: " + id);
+		}
 	}
 	
 	public void showAllGamesScore() {
