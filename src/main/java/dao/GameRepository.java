@@ -1,5 +1,6 @@
 package dao;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +21,9 @@ public class GameRepository implements IGameRepository{
 
 	public GameRepository() {
 		try {
-			QuakeParse parse = new QuakeParse("C:\\Users\\Matheus\\Documents\\PropositoDigital\\QuakeProject\\games.log");
+			File file = new File("games.log");
+			String path = file.getAbsolutePath();
+			QuakeParse parse = new QuakeParse(path);
 			for(Game game : parse.getGames()) {
 				//games.put(game.getId(), game);
 				games.add(game);
