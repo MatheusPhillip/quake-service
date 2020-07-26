@@ -1,7 +1,7 @@
 # Quake Arena 3 Parser
 > Este projeto visa lêr o conteúdo do arquivo games.log,
 > identificando e categorizando suas informações.
-> Onde, para cada jogo encontrado, ele exibirá algo como:
+> Para cada jogo encontrado ele exibirá algo como:
 ```
 game_1: {
     total_kills: 45;
@@ -29,4 +29,3 @@ __Passo 1__ <br />
 Abra a classe `Main.java` localizada na pasta: `\QuakeProject\src\main\java\main` <br />
 Na linha __16__ o método `gameController.showAllGamesScore()` será responsável por mostrar a lista de jogos <br />
 Caso não queira ver essa lista, simplesmente comente a linha `//` <br />
-
