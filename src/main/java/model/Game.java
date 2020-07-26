@@ -149,7 +149,7 @@ public class Game{
 	}
 	
 	/*
-	 *  IMPRIME OS JOGODARES DE MANEIRA ORGANIZADA
+	 *  IMPRIME OS JOGADORES DE MANEIRA ORGANIZADA
 	 */
 	private String toStringPlayers() {
 		return "players: " + players.toString();
