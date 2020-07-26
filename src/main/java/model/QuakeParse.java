@@ -16,7 +16,6 @@ public class QuakeParse {
 	private Player player;
 	private GameFile gameFile = new GameFile();
 	private String fileName = "games_parse.txt";
-	private File file = new File(fileName);
 	
 	public QuakeParse(String path) throws FileNotFoundException, IOException {
 		File file = new File(path); 
@@ -160,10 +159,12 @@ public class QuakeParse {
 		System.out.println(game.toString());
 	}
 	
+	/*
+	 *  SALVA OS JOGOS EM ARQUIVO GAMES_PARSE.TXT
+	 */
 	private void saveGameInFile() {
 		if(game != null) {
 			gameFile.saveGame(game);
 		}
 	}
-	
 }
