@@ -3,13 +3,6 @@ package dao;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
-
 import interfaces.IGameRepository;
 import model.Game;
 import model.Player;
@@ -23,18 +16,19 @@ public class GameRepository implements IGameRepository{
 		try {
 			File file = new File("games.log");
 			String path = file.getAbsolutePath();
-			QuakeParse parse = new QuakeParse(path);
-			for(Game game : parse.getGames()) {
-				//games.put(game.getId(), game);
+			QuakeParse parse = new QuakeParse(path); // PARSE TRABALHA PARA O REPOSITÓRIO
+			for(Game game : parse.getGames()) {		 // SALVA OS JOGOS ENCONTRADOS PELO PARSE
 				games.add(game);
 				bubbleSortPlayersScore(game.getPlayers());
 			}
-			//sortGamesById();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
+	/*
+	 *  RETORNA O JOGO PROCURADO PELO SEU ID
+	 */
 	@Override
 	public Game getGameById(String id) {
 		for (Game game : games) {
@@ -44,32 +38,24 @@ public class GameRepository implements IGameRepository{
 		}          
 		return null;
     }
+	
+	/*
+	 * MOSTRA O RESULTADO DE TODOS OS JOGOS
+	 */
 
 	@Override
 	public void showAllGamesScore() {
 		
 		for (Game game : games) {
 			System.out.println("Resultado do " + game.getId() + ":");
-			//game.showAllPlayersScore();
 			System.out.println(game.toString());
 		}
-		/*
-		for(Map.Entry<String, Game> game: games.entrySet()) {
-			bubbleSortPlayersScore(game.getValue().getPlayers());
-			System.out.println("Resultado do " + game.getValue().getId() + ":");
-			//game.showAllPlayersScore();
-			System.out.println(game.getValue().toString());
-		}
-		for(Game game : games.values()) {
-			bubbleSortPlayersScore(game.getPlayers());
-			System.out.println("Resultado do " + game.getId() + ":");
-			//game.showAllPlayersScore();
-			System.out.println(game.toString());
-		}
-		*/
-		
 	}
 	
+	/*
+	 *  ORDENA OS JOGADORES DE CADA JOGO PELA PONTUAÇÃO DE CADA JOGADOR
+	 *  MAIOR PONTUAÇÃO PRIMEIRO
+	 */
 	private void bubbleSortPlayersScore(ArrayList<Player> players) {
 		boolean change;
 	    do {
@@ -87,9 +73,4 @@ public class GameRepository implements IGameRepository{
 	        }
 	    } while (change);
 	}
-
-	
-	
-
-	
 }
