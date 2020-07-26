@@ -21,6 +21,7 @@ game_1: {
 - Inicializando o projeto: <br />
 __Passo 1__ <br />
 Inicialize o projeto através da classe principal: `Main.java` <br />
+Após a inicialização será criado um arquivo denominado __games_parse.txt__ na pasta do projeto com todos os jogos identificados. <br />
 
 - Buscar um jogo por ID: <br />
 __Passo 1__ <br />
